@@ -72,9 +72,85 @@ def compara_assinatura(as_a, as_b):
     pass
 
 def calcula_assinatura(texto):
-    '''IMPLEMENTAR. Essa funcao recebe um texto e deve devolver a assinatura do texto.'''
-    pass
+    tamanho_medio_palavra = calculo_tmp(texto)
+    type_token
+    hapax_legomana
+    tamanho_medio_setenca
+    complexo_setenca
+    tamanho_media_frase
+
+    return assinatura[tamanho_medio_palavra,
+                                 type_token,
+                             hapax_legomana,
+                      tamanho_medio_setenca,
+                           complexo_setenca,
+                        tamanho_media_frase
+    ]
 
 def avalia_textos(textos, ass_cp):
     '''IMPLEMENTAR. Essa funcao recebe uma lista de textos e uma assinatura ass_cp e deve devolver o numero (1 a n) do texto com maior probabilidade de ter sido infectado por COH-PIAH.'''
     pass
+
+def lista_frases(sentencas):
+    conjunto_frases = []
+    for sentenca in sentencas:
+        frases_sentenca = separa_frases(sentenca)
+        for frase in frases_sentenca:
+            conjunto_frases.append(frase)
+
+    return conjunto_frases
+
+def lista_palavras(frases):
+    conjunto_palavras = []
+    for frase in frases:
+        palavras_frase = separa_palavras(frase)
+        for palavra in palavras_frase:
+            conjunto_palavras.append(palavra)
+
+    return conjunto_palavras
+
+def calculo_tmp(texto):
+    soma_tamanho_palavra = 0
+
+    palavras = lista_palavras(lista_frases(separa_sentencas(texto)))
+    for palavra in palavras:
+        soma_tamanho_palavra += len(palavra)
+
+    return soma_tamanho_palavra/len(palavras)
+
+def calculo_tt(texto):
+        pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
