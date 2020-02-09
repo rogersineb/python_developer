@@ -73,13 +73,13 @@ def compara_assinatura(as_a, as_b):
 
 def calcula_assinatura(texto):
     tamanho_medio_palavra = calculo_tmp(texto)
-    type_token
-    hapax_legomana
-    tamanho_medio_setenca
-    complexo_setenca
-    tamanho_media_frase
+    type_token = calculo_tt(texto)
+    hapax_legomana = 0
+    tamanho_medio_setenca = 0
+    complexo_setenca = 0
+    tamanho_media_frase = 0
 
-    return assinatura[tamanho_medio_palavra,
+    return [tamanho_medio_palavra,
                                  type_token,
                              hapax_legomana,
                       tamanho_medio_setenca,
@@ -119,11 +119,25 @@ def calculo_tmp(texto):
     return soma_tamanho_palavra/len(palavras)
 
 def calculo_tt(texto):
-        pass
+    palavras = lista_palavras(lista_frases(separa_sentencas(texto)))
 
+    return n_palavras_diferentes(palavras)/len(palavras)
 
+def calculo_hl():
+    pass
 
+def calculo_tms():
+    pass
 
+def calculo_cs():
+    pass
+
+def calculo_tmf():
+    pass
+
+def test_calculo():
+    texto = "Muito além, nos confins inexplorados da região mais brega da Borda Ocidental desta Galáxia, há um pequeno sol amarelo e esquecido. Girando em torno deste sol, a uma distancia de cerca de 148 milhões de quilômetros, há um planetinha verde-azulado absolutamente insignificante, cujas formas de vida, descendentes de primatas, são tão extraordinariamente primitivas que ainda acham que relógios digitais são uma grande ideia."
+    assert calcula_assinatura(texto) == [5.571428571428571, 0.8253968253968254, 0.6984126984126984, 210.0, 4.5, 45.888888888888886]
 
 
 
