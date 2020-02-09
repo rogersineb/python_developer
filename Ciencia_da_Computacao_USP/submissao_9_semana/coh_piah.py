@@ -72,10 +72,10 @@ def compara_assinatura(as_a, as_b):
     pass
 
 def calcula_assinatura(texto):
-    tamanho_medio_palavra = calculo_tmp(texto)
-    type_token = calculo_tt(texto)
-    hapax_legomana = 0
-    tamanho_medio_setenca = 0
+    tamanho_medio_palavra = calcula_tmp(texto)
+    type_token = calcula_tt(texto)
+    hapax_legomana = calcula_hl(texto)
+    tamanho_medio_setenca = calcula_tms(texto)
     complexo_setenca = 0
     tamanho_media_frase = 0
 
@@ -109,7 +109,7 @@ def lista_palavras(frases):
 
     return conjunto_palavras
 
-def calculo_tmp(texto):
+def calcula_tmp(texto):
     soma_tamanho_palavra = 0
 
     palavras = lista_palavras(lista_frases(separa_sentencas(texto)))
@@ -118,21 +118,27 @@ def calculo_tmp(texto):
 
     return soma_tamanho_palavra/len(palavras)
 
-def calculo_tt(texto):
+def calcula_tt(texto):
     palavras = lista_palavras(lista_frases(separa_sentencas(texto)))
 
-    return n_palavras_diferentes(palavras)/len(palavras)
+    return n_palavras_diferentes(palavras) / len(palavras)
 
-def calculo_hl():
+def calcula_hl(texto):
+    palavras = lista_palavras(lista_frases(separa_sentencas(texto)))
+
+    return n_palavras_unicas(palavras) / len(palavras) 
+    
+
+def calcula_tms(texto):
+    sentencas = separa_sentencas(texto)
+    soma_sentenca = len(sentencas[0]) + len(sentencas[1])
+
+    return soma_sentenca / len(sentencas)
+        
+def calcula_cs():
     pass
 
-def calculo_tms():
-    pass
-
-def calculo_cs():
-    pass
-
-def calculo_tmf():
+def calcula_tmf():
     pass
 
 def test_calculo():
