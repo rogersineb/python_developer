@@ -1,11 +1,19 @@
-def modifica_nome(lista_nomes):
-    menor_nome = lista_nomes[0].strip().capitalize()
+def menor_nome(lista_nomes):
+    menor = lista_nomes[0].strip().capitalize()
     for nome in lista_nomes:
-        if len(menor_nome) > len(nome.strip()):
-            menor_nome = nome.strip().capitalize()
-    return menor_nome
+        if len(menor) > len(nome.strip()):
+            menor = nome.strip().capitalize()
+    return menor
 
 
 def test_mn():
-    lista_nomes = ["   ana    ", "    josé", "Arquibaldo    ", "   Alouhis"]
-    assert modifica_nome(lista_nomes) == "Ana"
+    assert menor_nome(["   ana    ", "    josé", "Arquibaldo    ", "   Alouhis"]) == "Ana"
+
+def test_mn_1():
+    assert menor_nome(['maria', 'josé', 'PAULO', 'Catarina']) == 'José'
+
+def test_mn_2():
+    assert menor_nome(['maria', ' josé  ', '  PAULO', 'Catarina  ']) == 'José'
+
+def test_mn_3():
+    assert menor_nome(['Bárbara', 'JOSÉ  ', 'Bill']) == 'José'
