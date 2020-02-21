@@ -1,2 +1,2 @@
 # python_developer
-Repository created for Python Developer at Datacamp's course
+Repository created for activities performed with Python
